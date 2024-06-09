@@ -66,15 +66,13 @@
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
             z-index: 4; /* Ensure the subtext is above the year indicator and map */
         }
-        #map-container {
+        #map {
+            position: fixed;
+            top: 180px; /* Adjusted to make room for the title and subtext */
+            left: 50%;
+            transform: translateX(-50%);
             width: 960px;
             height: 600px;
-            margin: 0 auto;
-            position: relative;
-        }
-        #map {
-            width: 100%;
-            height: 100%;
             z-index: 2; /* Ensure the map is above the text container */
         }
         #year-indicator {
@@ -123,9 +121,12 @@
             background-color: #76c7c0;
         }
         #text-container {
-            margin: 20px auto;
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 960px; /* Match the width of the choropleth graph */
-            height: auto;
+            height: 50vh;
             background-color: #d3d3d3; /* Match the background color of the top half */
             z-index: 1; /* Ensure the text container is below the map */
             display: flex;
@@ -142,8 +143,8 @@
             opacity: 0;
         }
         #source {
-            position: relative;
-            top: 20px; /* Positioned under the map */
+            position: fixed;
+            top: 790px; /* Positioned under the map */
             left: 50%;
             transform: translateX(-50%);
             font-size: 14px;
@@ -151,7 +152,6 @@
             z-index: 2; /* Ensure the source text is above the text container */
         }
     </style>
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="title">US Personal Income Per Capita</div>
@@ -172,9 +172,10 @@
         <div class="timeline-label">2022</div>
     </div>
     <div id="year-indicator">1998</div>
-    <div id="map-container">
-        <div id="map"></div>
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
     </div>
+    <div id="map"></div>
     <div id="source">Source: bea.gov</div>
     <div id="text-container">
         <div id="text-content">Insert text here</div>
@@ -207,6 +208,7 @@
     <div class="section">2023</div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
+    <script src="https://unpkg.com/us-atlas/states-10m.json"></script>
     <script src="script.js"></script>
 </body>
 </html>
