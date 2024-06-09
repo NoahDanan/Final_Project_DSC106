@@ -122,11 +122,10 @@
         }
         #text-container {
             position: fixed;
-            bottom: 0;
+            bottom: -100px; /* Adjust this value to move the text down */
             left: 50%;
             transform: translateX(-50%);
             width: 960px; /* Match the width of the choropleth graph */
-            height: 50vh;
             background-color: #d3d3d3; /* Match the background color of the top half */
             z-index: 1; /* Ensure the text container is below the map */
             display: flex;
@@ -208,7 +207,6 @@
     <div class="section">2023</div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
-    <script src="https://unpkg.com/us-atlas/states-10m.json"></script>
     <script src="script.js"></script>
 </body>
 </html>
