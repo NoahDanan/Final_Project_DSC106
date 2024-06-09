@@ -67,12 +67,10 @@
             z-index: 4; /* Ensure the subtext is above the year indicator and map */
         }
         #map {
-            position: fixed;
-            top: 180px; /* Adjusted to make room for the title and subtext */
-            left: 50%;
-            transform: translateX(-50%);
+            margin: 0 auto;
             width: 960px;
             height: 600px;
+            position: relative;
             z-index: 2; /* Ensure the map is above the text container */
         }
         #year-indicator {
@@ -121,12 +119,9 @@
             background-color: #76c7c0;
         }
         #text-container {
-            position: fixed;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            margin: 20px auto;
             width: 960px; /* Match the width of the choropleth graph */
-            height: 50vh;
+            height: auto;
             background-color: #d3d3d3; /* Match the background color of the top half */
             z-index: 1; /* Ensure the text container is below the map */
             display: flex;
@@ -143,8 +138,8 @@
             opacity: 0;
         }
         #source {
-            position: fixed;
-            top: 790px; /* Positioned under the map */
+            position: relative;
+            top: 20px; /* Positioned under the map */
             left: 50%;
             transform: translateX(-50%);
             font-size: 14px;
@@ -208,7 +203,6 @@
     <div class="section">2023</div>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://unpkg.com/topojson@3"></script>
-    <script src="https://unpkg.com/us-atlas/states-10m.json"></script>
     <script src="script.js"></script>
 </body>
 </html>
